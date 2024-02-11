@@ -4,6 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const path = require('path');
 var instance = require('./Razorpay');
+require("dotenv").config({ path: "./.env" });
 
 
 
@@ -52,7 +53,7 @@ app.use(express.static(path.join(__dirname, "../frontend/build")))
 
 
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 7000);
 
 app.post('/Order', async (req, resp) => {
   const option = {
