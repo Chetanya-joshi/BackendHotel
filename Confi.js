@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const db="mongodb+srv://hotelsite:hotel123@cluster0.ewncd00.mongodb.net/hotelsitework?retryWrites=true&w=majority"
+require("dotenv").config({ path: "./.env" });
+const db=process.env.MONGO_URL;
 module.exports= mongoose.connect(db)
 .then(()=>{
     console.log("yes connected suessfully")
