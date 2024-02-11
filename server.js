@@ -24,7 +24,7 @@ const nodemailer = require('nodemailer');
 
 app.use(
   cors({
-    origin:["http://localhost:5000" , "https://mern-task-app.onrender.com"],
+    origin:["http://localhost:5000" , "https://mern-task-app.onrender.com" , "https://mern-task-app-xc3i.onrender.com"],
   })
 );
 
