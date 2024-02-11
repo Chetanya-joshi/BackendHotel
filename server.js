@@ -15,18 +15,20 @@ require('./Confi')
 const information = require('./Contactus')
 const Reserv = require('./Reservation')
 
-
+const corsOptions = {
+  origin: ["http://localhost:5000" , "https://mern-task-app.onrender.com" , "https://mern-task-app-xc3i.onrender.com"],
+ //  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
 
 const cors=require('cors');
 // const { Collection } = require('mongoose')
 app.use(cors())
 const nodemailer = require('nodemailer');
 
-app.use(
-  cors({
-    origin:["http://localhost:5000" , "https://mern-task-app.onrender.com" , "https://mern-task-app-xc3i.onrender.com"],
-  })
-);
+app.use(cors(corsOptions));
 
 // Other imports...
 
